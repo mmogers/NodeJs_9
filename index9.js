@@ -1,11 +1,10 @@
-//templates
+
 const express = require('express') // add modul from downloaded external library
 
 const app = express()//will manage server using this const
 
 app.set('view engine', 'ejs') //set the template ejs
-
-
+app.use(express.static('public')) //will be run before every get function 
 
 
 app.get('/', (req,res) => { //anonim function will be reflected on the main page
