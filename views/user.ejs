@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
+</head>
+<body>
+    <h1>User Page: <%= username %></h1>
+    <!--JS-->
+    <% if(username.toLowerCase() == 'john') { %>
+       <ul>
+            <% hobbies.forEach((el) => { %>
+                <li><%= el %></li>
+           <% }) %>
+       </ul>
+        <% } %>
+</body>
+</html>
