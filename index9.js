@@ -4,6 +4,7 @@ const express = require('express') // add modul from downloaded external library
 const app = express()//will manage server using this const
 
 app.set('view engine', 'ejs') //set the template ejs
+app.use(express.urlencoded({extended:false}))
 app.use(express.static('public')) //will be run before every get function 
 
 
@@ -23,8 +24,22 @@ app.get('/user/:username/', (req,res) => {  //dynamic value
     res.render('user', data)
 })
 
+app.post('/check-user' , (req, res) => {
+    console.log(req.body) // all data from form
+    let username = req.body.username
+    if (username ==""){
+        return res.redirect('/')
+    } else{
+        return res.redirect('/user/' + username)
+    }
+
+}) //post will work only when the data was transferred on this url check-user
+
+
+
 const PORT = 3000
 
 app.listen(PORT, ()=>{
     console.log(`Server started: http://localhost:${PORT}`)
 }) //3000-port, call back function afet server is run
+

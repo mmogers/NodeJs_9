@@ -4,8 +4,8 @@
         <a href="/">Main</a>
         <a href="/about">About Us</a>
     </nav>
-    <form>
-        <input type="text" placeholder="User Name">
-        <button>Search</button>
+    <form method="post" action="/check-user"> <!--action - which url page will be responsible for info from this form-->
+        <input type="text" name = "username" placeholder="User Name"> <!--need to add name of the field-->
+        <button type="submit">Search</button><!--type should be submit, only in this case it can be redirected to another page-->
     </form>
 </header>
